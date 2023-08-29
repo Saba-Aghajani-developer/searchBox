@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Search Widget</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #7359E8;
+        height: 50vh;
+    }
+
+    .row {
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 45vh 0;
+    }
+
+    .search {
+        background-color: aliceblue;
+        padding: 5px;
+    }
+
+    input {
+        background-color: aliceblue;
+        border: none;
+        outline: none;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 25px;
+        width: 160px;
+        transition: .4s;
+    }
+
+    svg {
+        color: rgb(0, 0, 0);
+        font-size: 30px;
+        width: 30px;
+    }
+    label{
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="row">
+        <div class="search">
+            <input id="search" type="search" placeholder="search ...">
+            <label for="search" id="search2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                </svg></label>
+        </div>
+    </div>
+</body>
+<script>
+    let _w = document.getElementById('search').clientWidth
+    document.getElementById('search').setAttribute('data-w', _w)
+    document.getElementById('search2').addEventListener('click', () => {
+        if (document.getElementById('search').style.width == 0+'px') {
+            document.getElementById('search').style.width = _w + 'px'
+        } else {
+            document.getElementById('search').style.width = 0 + 'px'
+        }
+    })
+
+</script>
+
+</html>
